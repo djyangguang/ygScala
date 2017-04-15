@@ -1,0 +1,211 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=8612, tid=0x000000d4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_101-b13) (build 1.8.0_101-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.101-b13 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x05cbc400):  JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=212, stack(0x06000000,0x06050000)]
+
+Stack: [0x06000000,0x06050000],  sp=0x0604ed5c,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1a985b]
+V  [jvm.dll+0x1a2068]
+V  [jvm.dll+0x8c471]
+V  [jvm.dll+0x8c64d]
+V  [jvm.dll+0x8cae7]
+V  [jvm.dll+0x29da2a]
+V  [jvm.dll+0x2a1ce6]
+V  [jvm.dll+0x2a1ff2]
+V  [jvm.dll+0x2a212c]
+V  [jvm.dll+0x2a2986]
+V  [jvm.dll+0x2a2f87]
+V  [jvm.dll+0x2a4553]
+V  [jvm.dll+0x288d49]
+V  [jvm.dll+0x288e1a]
+V  [jvm.dll+0x288f88]
+V  [jvm.dll+0x289202]
+V  [jvm.dll+0x6feca]
+V  [jvm.dll+0x7067f]
+V  [jvm.dll+0x17d7dc]
+V  [jvm.dll+0x17d8ca]
+V  [jvm.dll+0x1c1ed6]
+C  [msvcr100.dll+0x5c556]
+C  [msvcr100.dll+0x5c600]
+C  [KERNEL32.DLL+0x162c4]
+C  [ntdll.dll+0x60fd9]
+C  [ntdll.dll+0x60fa4]
+C  0x00000000
+
+
+Current CompileTask:
+C1:    157   29             java.io.WinNTFileSystem::normalize (231 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x05ceb400 JavaThread "Service Thread" daemon [_thread_blocked, id=3960, stack(0x06090000,0x060e0000)]
+=>0x05cbc400 JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=212, stack(0x06000000,0x06050000)]
+  0x05cba000 JavaThread "Attach Listener" daemon [_thread_blocked, id=11284, stack(0x05f70000,0x05fc0000)]
+  0x03443c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4624, stack(0x05ee0000,0x05f30000)]
+  0x0343b000 JavaThread "Finalizer" daemon [_thread_blocked, id=14740, stack(0x05bc0000,0x05c10000)]
+  0x03425c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=5664, stack(0x05b30000,0x05b80000)]
+  0x03371400 JavaThread "main" [_thread_in_native, id=1548, stack(0x01790000,0x017e0000)]
+
+Other Threads:
+  0x0341f000 VMThread [stack: 0x05aa0000,0x05af0000] [id=1840]
+  0x05d3ec00 WatcherThread [stack: 0x06120000,0x06170000] [id=1796]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1358K [0x10200000, 0x10750000, 0x15750000)
+  eden space 4416K,  30% used [0x10200000, 0x10353980, 0x10650000)
+  from space 512K,   0% used [0x10650000, 0x10650000, 0x106d0000)
+  to   space 512K,   0% used [0x106d0000, 0x106d0000, 0x10750000)
+ tenured generation   total 10944K, used 0K [0x15750000, 0x16200000, 0x20200000)
+   the space 10944K,   0% used [0x15750000, 0x15750000, 0x15750200, 0x16200000)
+ Metaspace       used 1760K, capacity 2244K, committed 2368K, reserved 4480K
+
+Card table byte_map: [0x05510000,0x055a0000] byte_map_base: 0x0548f000
+
+Polling page: 0x017e0000
+
+CodeCache: size=32768Kb used=685Kb max_used=685Kb free=32082Kb
+ bounds [0x03510000, 0x035c0000, 0x05510000]
+ total_blobs=168 nmethods=28 adapters=72
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.138 Thread 0x05cbc400 nmethod 24 0x035ba288 code [0x035ba3c0, 0x035ba658]
+Event: 0.140 Thread 0x05cbc400   25             java.lang.AbstractStringBuilder::append (29 bytes)
+Event: 0.140 Thread 0x05cbc400 nmethod 25 0x035bab48 code [0x035bac50, 0x035bad3c]
+Event: 0.141 Thread 0x05cbc400   26             java.io.WinNTFileSystem::isSlash (18 bytes)
+Event: 0.141 Thread 0x05cbc400 nmethod 26 0x035bae48 code [0x035baf40, 0x035bafe0]
+Event: 0.141 Thread 0x05cbc400   27  s          java.lang.StringBuffer::append (13 bytes)
+Event: 0.142 Thread 0x05cbc400 nmethod 27 0x035bb048 code [0x035bb150, 0x035bb38c]
+Event: 0.142 Thread 0x05cbc400   28             java.lang.Math::max (11 bytes)
+Event: 0.142 Thread 0x05cbc400 nmethod 28 0x035bb508 code [0x035bb600, 0x035bb670]
+Event: 0.142 Thread 0x05cbc400   29             java.io.WinNTFileSystem::normalize (231 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.039 Thread 0x03371400 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x10206ea8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u101\7261\hotspot\src\share\Éô|cªõ£?
+Event: 0.039 Thread 0x03371400 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x10207178) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u101\7261\hotspot\src\share\vm\prims\jni.cpp, 
+
+Events (10 events):
+Event: 0.138 loading class java/util/zip/Inflater
+Event: 0.139 loading class java/util/zip/Inflater done
+Event: 0.139 loading class java/util/zip/ZStreamRef
+Event: 0.139 loading class java/util/zip/ZStreamRef done
+Event: 0.139 loading class java/util/zip/ZipFile$ZipFileInflaterInputStream
+Event: 0.139 loading class java/util/zip/InflaterInputStream
+Event: 0.139 loading class java/util/zip/InflaterInputStream done
+Event: 0.139 loading class java/util/zip/ZipFile$ZipFileInflaterInputStream done
+Event: 0.139 loading class sun/misc/IOUtils
+Event: 0.139 loading class sun/misc/IOUtils done
+
+
+Dynamic libraries:
+0x008e0000 - 0x00913000 	D:\eclipse_neon\jre\bin\javaw.exe
+0x77c40000 - 0x77dc3000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x74b00000 - 0x74be0000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x74850000 - 0x749f1000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x76360000 - 0x763d7000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x77190000 - 0x7724e000 	C:\WINDOWS\System32\msvcrt.dll
+0x74e20000 - 0x74e61000 	C:\WINDOWS\System32\sechost.dll
+0x74720000 - 0x747e1000 	C:\WINDOWS\System32\RPCRT4.dll
+0x74700000 - 0x7471e000 	C:\WINDOWS\System32\SspiCli.dll
+0x746f0000 - 0x746fa000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x77790000 - 0x777ea000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x77260000 - 0x773bf000 	C:\WINDOWS\System32\USER32.dll
+0x76f90000 - 0x76fa5000 	C:\WINDOWS\System32\win32u.dll
+0x778c0000 - 0x778eb000 	C:\WINDOWS\System32\GDI32.dll
+0x76fb0000 - 0x7710b000 	C:\WINDOWS\System32\gdi32full.dll
+0x70890000 - 0x70a9a000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.447_none_89c64d28dafea4b9\COMCTL32.dll
+0x77430000 - 0x77641000 	C:\WINDOWS\System32\combase.dll
+0x74a10000 - 0x74af0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x77160000 - 0x77185000 	C:\WINDOWS\System32\IMM32.DLL
+0x10000000 - 0x100d9000 	C:\Program Files\MacType\MacType.dll
+0x6da60000 - 0x6daaa000 	C:\WINDOWS\SYSTEM32\EasyHk32.dll
+0x74d20000 - 0x74d26000 	C:\WINDOWS\System32\PSAPI.DLL
+0x76ea0000 - 0x76f8a000 	C:\WINDOWS\System32\ole32.dll
+0x6cfe0000 - 0x6d4b8000 	C:\WINDOWS\SYSTEM32\d2d1.dll
+0x77ac0000 - 0x77c3d000 	C:\WINDOWS\System32\CRYPT32.dll
+0x76df0000 - 0x76dfe000 	C:\WINDOWS\System32\MSASN1.dll
+0x6cde0000 - 0x6cfd5000 	C:\WINDOWS\SYSTEM32\dwrite.dll
+0x61360000 - 0x6141f000 	D:\eclipse_neon\jre\bin\msvcr100.dll
+0x602b0000 - 0x6067c000 	D:\eclipse_neon\jre\bin\client\jvm.dll
+0x746e0000 - 0x746e8000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x74100000 - 0x74108000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x74250000 - 0x74274000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x773c0000 - 0x77423000 	C:\WINDOWS\System32\WS2_32.dll
+0x01700000 - 0x01723000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x767f0000 - 0x76826000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x6f9d0000 - 0x6f9dc000 	D:\eclipse_neon\jre\bin\verify.dll
+0x6bfd0000 - 0x6bff1000 	D:\eclipse_neon\jre\bin\java.dll
+0x6be60000 - 0x6be73000 	D:\eclipse_neon\jre\bin\zip.dll
+0x74f00000 - 0x762d9000 	C:\WINDOWS\System32\SHELL32.dll
+0x76830000 - 0x76d9e000 	C:\WINDOWS\System32\windows.storage.dll
+0x777f0000 - 0x77835000 	C:\WINDOWS\System32\powrprof.dll
+0x76da0000 - 0x76de6000 	C:\WINDOWS\System32\shlwapi.dll
+0x77250000 - 0x7725d000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x74e70000 - 0x74ef8000 	C:\WINDOWS\System32\shcore.dll
+0x74af0000 - 0x74aff000 	C:\WINDOWS\System32\profapi.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath/p:D:\eclipse_old\plugins\org.scala-lang.scala-library_2.11.8.v20160304-115712-1706a37eb8.jar;D:\eclipse_old\plugins\org.scala-lang.scala-reflect_2.11.8.v20160304-115712-1706a37eb8.jar 
+java_command: JDBCofSparkSQL
+java_class_path (initial): D:\Spark_workspace\laoyangScala\bin;D:\Sparkjars\activation-1.1.1.jar;D:\Sparkjars\antlr-2.7.7.jar;D:\Sparkjars\antlr4-runtime-4.5.3.jar;D:\Sparkjars\antlr-runtime-3.4.jar;D:\Sparkjars\aopalliance-1.0.jar;D:\Sparkjars\aopalliance-repackaged-2.4.0-b34.jar;D:\Sparkjars\apacheds-i18n-2.0.0-M15.jar;D:\Sparkjars\apacheds-kerberos-codec-2.0.0-M15.jar;D:\Sparkjars\apache-log4j-extras-1.2.17.jar;D:\Sparkjars\api-asn1-api-1.0.0-M20.jar;D:\Sparkjars\api-util-1.0.0-M20.jar;D:\Sparkjars\arpack_combined_all-0.1.jar;D:\Sparkjars\avro-1.7.7.jar;D:\Sparkjars\avro-ipc-1.7.7.jar;D:\Sparkjars\avro-mapred-1.7.7-hadoop2.jar;D:\Sparkjars\base64-2.3.8.jar;D:\Sparkjars\bcprov-jdk15on-1.51.jar;D:\Sparkjars\bonecp-0.8.0.RELEASE.jar;D:\Sparkjars\breeze_2.11-0.12.jar;D:\Sparkjars\breeze-macros_2.11-0.12.jar;D:\Sparkjars\calcite-avatica-1.2.0-incubating.jar;D:\Sparkjars\calcite-core-1.2.0-incubating.jar;D:\Sparkjars\calcite-linq4j-1.2.0-incubating.jar;D:\Sparkjars\chill_2.11-0.8.0.jar;D:\Sparkjars\chill-java-0.8.0.jar;D:\Sparkjars\commons-beanutils-1.7.0.jar;D:\Sparkjars\commons-beanutils-core-1.8.0.jar;D:\Sparkjars\commons-cli-1.2.jar;D:\Sparkjars\commons-codec-1.10.jar;D:\Sparkjars\commons-collections-3.2.2.jar;D:\Sparkjars\commons-compiler-3.0.0.jar;D:\Sparkjars\commons-compress-1.4.1.jar;D:\Sparkjars\commons-configuration-1.6.jar;D:\Sparkjars\commons-crypto-1.0.0.jar;D:\Sparkjars\commons-dbcp-1.4.jar;D:\Sparkjars\commons-digester-1.8.jar;D:\Sparkjars\commons-httpclient-3.1.jar;D:\Sparkjars\commons-io-2.4.jar;D:\Sparkjars\commons-lang-2.6.jar;D:\Sparkjars\commons-lang3-3.5.jar;D:\Sparkjars\commons-logging-1.1.3.jar;D:\Sparkjars\commons-math3-3.4.1.jar;D:\Sparkjars\commons-net-2.2.jar;D:\Sparkjars\commons-pool-1.5.4.jar;D:\Sparkjars\compress-lzf-1.0.3.jar;D:\Sparkjars\core-1.1.2.jar;D:\Sparkjars\curator-client-2.6.0.jar;D:\Sparkjars\curator-framework-2.6.0.jar;D:\Sparkjars\curator-recipes-2.6.0.jar;D:\Sparkjars\datanucleus-api-jdo-3.2.6.jar;D:\Sparkjars\datanucleu
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_67
+CLASSPATH=.;C:\Program Files\Java\jdk1.7.0_67\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_67\lib\tools.jar;
+PATH=D:\Program Files (x86)\Borland\Delphi7\Bin;D:\Program Files (x86)\Borland\Delphi7\Projects\Bpl\;D:\oracle\product\10.2.0\db_1\bin;D:\Python27\;D:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\dj\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MacType;D:\apache-maven-3.3.9\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;D:\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;D:\Subversion\bin;C:\Users\dj\AppData\Roaming\Python\Scripts;C:\Users\dj\AppData\Local\Microsoft\WindowsApps\;D:\Python27\Lib\site-packages\django\bin
+USERNAME=master-hadoop
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 14393 (10.0.14393.0)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8122604k(774436k free), swap 15463396k(3080k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.101-b13) for windows-x86 JRE (1.8.0_101-b13), built on Jun 22 2016 00:45:44 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Mar 11 16:12:11 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
